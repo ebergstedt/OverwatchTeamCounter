@@ -28,9 +28,11 @@ namespace Ebergstedt.Overwatch.Counters
                                      bounds.Size);
                 }
 
-                return bitmap.Clone(
-                                    bounds, 
-                                    bitmap.PixelFormat);
+                var transformBitmapToJpg = BitmapTransformer.TransformBitmapToJpg(bitmap);
+
+                return transformBitmapToJpg.Clone(
+                                                  bounds,
+                                                  transformBitmapToJpg.PixelFormat);
             }
         }
     }

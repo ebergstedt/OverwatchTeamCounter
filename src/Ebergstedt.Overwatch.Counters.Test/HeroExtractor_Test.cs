@@ -19,7 +19,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
             var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap) Bitmap.FromFile(
                                                                                                                          FakeScreenShotPath),
-                                                                                                HeroLoader.LoadMugshotLocations(
+                                                                                                HeroLoader.LoadEnemyMugshotLocations(
                                                                                                                                 MugshotLocationsConfigPath, 
                                                                                                                                 ScreenResolution.FullHD));
 

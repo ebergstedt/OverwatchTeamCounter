@@ -14,9 +14,9 @@ namespace Ebergstedt.Overwatch.Counters
     public class HeroLoader
     {
 
-        public MugshotLocations LoadMugshotLocations(
-                                                     [NotNull] string configPath,
-                                                     ScreenResolution screenResolution = ScreenResolution.FullHD)
+        public MugshotLocations LoadEnemyMugshotLocations(
+                                                          [NotNull] string configPath,
+                                                          ScreenResolution screenResolution = ScreenResolution.FullHD)
         {
             if (configPath == null) throw new ArgumentNullException(nameof(configPath));
 
@@ -29,7 +29,7 @@ namespace Ebergstedt.Overwatch.Counters
                 case ScreenResolution.FullHD:
                     return new MugshotLocations()
                     {
-                        LocationPoints = mugshotLocationsConfig.FullHDHeroPortraitLocations,
+                        LocationPoints = mugshotLocationsConfig.FullHDEnemyHeroPortraitLocations,
                         PortraitWidth = mugshotLocationsConfig.FullHDPortraitWidth,
                         PortraitHeight = mugshotLocationsConfig.FullHDPortraitHeight
                     };

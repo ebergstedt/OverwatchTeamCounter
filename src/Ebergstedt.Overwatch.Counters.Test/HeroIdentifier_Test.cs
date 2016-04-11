@@ -65,11 +65,11 @@ namespace Ebergstedt.Overwatch.Counters.Test
         }
 
         [Test]
-        public void IdentifyAllHeroesByScreenShot()
+        public void IdentifyAllEnemyHeroesByScreenShot()
         {
             var loadFromConfig = _heroLoader.LoadHeroConfig(
-                                                              HeroConfigPath,
-                                                              Environment.CurrentDirectory);
+                                                            HeroConfigPath,
+                                                            Environment.CurrentDirectory);
 
             var heroWithMetaDatas = _heroLoader.LoadWithMetaData(loadFromConfig);
 
@@ -84,18 +84,18 @@ namespace Ebergstedt.Overwatch.Counters.Test
             var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap)Bitmap.FromFile(
                                                                                                                         FakeScreenShotPath),
-                                                                                                HeroLoader.LoadMugshotLocations(
+                                                                                                HeroLoader.LoadEnemyMugshotLocations(
                                                                                                                                 MugshotLocationsConfigPath, 
                                                                                                                                 ScreenResolution.FullHD));
 
             List<int> correctMugshotsHeroIdsOnFakeScreenshot = new List<int>()
             {
-                11,
-                2,
-                19,
                 17,
-                20,
-                8
+                18,
+                19,
+                1,
+                17,
+                12
             };
 
             int index = 0;
