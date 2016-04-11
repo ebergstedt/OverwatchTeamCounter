@@ -24,19 +24,64 @@ namespace Ebergstedt.Overwatch.Counters
         {
             if (targetHeroBitmap == null) throw new ArgumentNullException(nameof(targetHeroBitmap));
 
+            List<Tuple<float, int>> results = new List<Tuple<float, int>>();
+
             foreach (var heroWithMugShot in _heroesWithMugShots)
             {
+                Bitmap template = ResizeTemplateToTargetSize(
+                                                             targetHeroBitmap, 
+                                                             heroWithMugShot.Mugshot);
+
                 ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0);
-                // compare two images
-                TemplateMatch[] matchings = tm.ProcessImage(targetHeroBitmap, heroWithMugShot.Mugshot);
-                //// check similarity level
-                if (matchings[0].Similarity > 0.95)
-                {
-                    return heroWithMugShot.Id;
-                }
+                TemplateMatch[] matchings = tm.ProcessImage(
+                                                            targetHeroBitmap, 
+                                                            template);
+                results.Add(new Tuple<float, int>(
+                                                  matchings[0].Similarity,
+                                                  heroWithMugShot.Id));
             }
 
-            return 0;
+            if (!results.Any())
+                return 0;            
+
+            return results.OrderByDescending(r => r.Item1).First().Item2;
+        }
+
+        private Bitmap ResizeTemplateToTargetSize(
+                                                  Bitmap target, 
+                                                  Bitmap template)
+        {
+            Bitmap result = (Bitmap) template.Clone();
+
+            if (template.Width > target.Width)
+            {
+                result = result.Clone(
+                                      new Rectangle(
+                                                    new Point(
+                                                              0,
+                                                              0), 
+                                                    new Size(
+                                                             target.Width, 
+                                                             result.Height)), 
+                                      result.PixelFormat);
+
+            }
+
+            if (template.Height > target.Height)
+            {
+                result = result.Clone(
+                                      new Rectangle(
+                                                    new Point(
+                                                              0, 
+                                                              0),
+                                                    new Size(
+                                                             result.Width,
+                                                             target.Height)),
+                                      result.PixelFormat);
+
+            }
+
+            return result;
         }
     }
 }
