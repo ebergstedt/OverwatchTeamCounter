@@ -1,0 +1,34 @@
+﻿{
+  "Heroes": [
+    {
+      "Id": 2,
+      "Name": "McCree",
+      "MugshotFilePath": "Mugshots\\2.jpg"
+    },
+    {
+      "Id": 8,
+      "Name": "Junkrat",
+      "MugshotFilePath": "Mugshots\\8.jpg"
+    },
+    {
+      "Id": 11,
+      "Name": "Torbjorn",
+      "MugshotFilePath": "Mugshots\\11.jpg"
+    },
+    {
+      "Id": 19,
+      "Name": "Mercy",
+      "MugshotFilePath": "Mugshots\\19.jpg"
+    },
+    {
+      "Id": 17,
+      "Name": "Zarya",
+      "MugshotFilePath": "Mugshots\\17.jpg"
+    },
+    {
+      "Id": 20,
+      "Name": "Symmetra",
+      "MugshotFilePath": "Mugshots\\20.jpg"
+    }
+  ]
+}

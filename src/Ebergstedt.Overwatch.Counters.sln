@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ebergstedt.Overwatch.Counters", "Ebergstedt.Overwatch.Counters\Ebergstedt.Overwatch.Counters.csproj", "{99262D6E-5C1B-42EA-902C-152364C05DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ebergstedt.Overwatch.Counters.Test", "Ebergstedt.Overwatch.Counters.Test\Ebergstedt.Overwatch.Counters.Test.csproj", "{BBDE5EB3-D128-4E50-93C8-A3F8D69D1899}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99262D6E-5C1B-42EA-902C-152364C05DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99262D6E-5C1B-42EA-902C-152364C05DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99262D6E-5C1B-42EA-902C-152364C05DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99262D6E-5C1B-42EA-902C-152364C05DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBDE5EB3-D128-4E50-93C8-A3F8D69D1899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBDE5EB3-D128-4E50-93C8-A3F8D69D1899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBDE5EB3-D128-4E50-93C8-A3F8D69D1899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBDE5EB3-D128-4E50-93C8-A3F8D69D1899}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
