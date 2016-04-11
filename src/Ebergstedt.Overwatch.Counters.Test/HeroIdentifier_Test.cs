@@ -88,11 +88,25 @@ namespace Ebergstedt.Overwatch.Counters.Test
                                                                                                                                 MugshotLocationsConfigPath, 
                                                                                                                                 ScreenResolution.FullHD));
 
+            List<int> correctMugshotsHeroIdsOnFakeScreenshot = new List<int>()
+            {
+                11,
+                2,
+                19,
+                17,
+                20,
+                8
+            };
+
+            int index = 0;
+
             foreach (var mugshot in extractHeroMugshotsByScreenShot)
             {
                 var heroIdByMugshot = heroIdentifier.GetHeroIdByMugshot(mugshot);
 
-                Assert.True(heroIdByMugshot > 0);
+                Assert.True(correctMugshotsHeroIdsOnFakeScreenshot[index] == heroIdByMugshot);
+
+                index++;
             }
         }
     }
