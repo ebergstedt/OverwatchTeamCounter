@@ -6,8 +6,10 @@ Takes a screenshot of your active game window and displays the best hero to coun
 
 # TODO:
 
-* Make xaml app
 * Get accurate winrates somewhere
-* Implement winrate algorithm
+* Check current map
+* Implement winrate algorithm against enemy heroes
+* Implement weights for heroes on ally team
+* See if a player does well and alter algorithm accordingly
 * Display hero counter
 
