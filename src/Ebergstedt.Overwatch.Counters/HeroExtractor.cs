@@ -13,44 +13,25 @@ namespace Ebergstedt.Overwatch.Counters
     {
         public IEnumerable<Bitmap> ExtractHeroMugshotsByScreenShot(
                                                                    [NotNull] Bitmap screenShot,
-                                                                   [NotNull] MugshotLocations mugshotLocations,
-                                                                   ScreenResolution screenResolution = ScreenResolution.FullHD,
-                                                                   int mugshotWidth = 73,
-                                                                   int mugshotHeight = 43
-                                                                   )
+                                                                   [NotNull] MugshotLocations mugshotLocations)
         {
             if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
             if (mugshotLocations == null) throw new ArgumentNullException(nameof(mugshotLocations));
 
-            switch (screenResolution)
-            {
-                case ScreenResolution.FullHD:
-                    return HandleFullHD(
-                                        screenShot,
-                                        mugshotLocations,
-                                        mugshotWidth,
-                                        mugshotHeight);
-            }
-
-            throw new NotImplementedException(nameof(screenResolution));
-        }
-
-        private IEnumerable<Bitmap> HandleFullHD(
-                                                 [NotNull] Bitmap screenShot,
-                                                 [NotNull] MugshotLocations mugshotLocations,
-                                                 int mugshotWidth,
-                                                 int mugshotHeight)
-        {
-            if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
-            if (mugshotLocations == null) throw new ArgumentNullException(nameof(mugshotLocations));
 
             foreach (var mugshotLocationPoint in mugshotLocations.LocationPoints)
             {
                 Rectangle bounds = new Rectangle(
-                                                 new Point(mugshotLocationPoint[0], mugshotLocationPoint[1]), 
-                                                 new Size(mugshotWidth, mugshotHeight));
+                                                 new Point(
+                                                           mugshotLocationPoint[0],
+                                                           mugshotLocationPoint[1]),
+                                                 new Size(
+                                                          mugshotLocations.PortraitWidth,
+                                                          mugshotLocations.PortraitHeight));
 
-                yield return screenShot.Clone(bounds, screenShot.PixelFormat);
+                yield return screenShot.Clone(
+                                              bounds,
+                                              screenShot.PixelFormat);
             }
         }
     }

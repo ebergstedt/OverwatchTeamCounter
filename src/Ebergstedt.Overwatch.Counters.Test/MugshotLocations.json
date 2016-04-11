@@ -1,10 +1,12 @@
 ﻿{
-  "FullHD": [
+  "FullHDHeroPortraitLocations": [
     [ 400, 592 ],
     [ 608, 592 ],
     [ 813, 592 ],
     [ 1019, 592 ],
     [ 1225, 592 ],
     [ 1432, 592 ]
-  ]
+  ],
+  "FullHDPortraitHeight": 43,
+  "FullHDPortraitWidth":  73
 }

@@ -11,16 +11,26 @@ namespace Ebergstedt.Overwatch.Counters
 {
     public class ScreenCapturer
     {
-        public Bitmap GetActiveScreenCapture([NotNull] Rectangle bounds)
+        public Bitmap GetActiveScreenCapture(
+                                             [NotNull] Rectangle bounds)
         {            
-            using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+            using (Bitmap bitmap = new Bitmap(
+                                              bounds.Width, 
+                                              bounds.Height))
             {
                 using (Graphics g = Graphics.FromImage(bitmap))
                 {
-                    g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+                    g.CopyFromScreen(
+                                     new Point(
+                                               bounds.Left, 
+                                               bounds.Top), 
+                                     Point.Empty, 
+                                     bounds.Size);
                 }
 
-                return bitmap.Clone(bounds, bitmap.PixelFormat);
+                return bitmap.Clone(
+                                    bounds, 
+                                    bitmap.PixelFormat);
             }
         }
     }

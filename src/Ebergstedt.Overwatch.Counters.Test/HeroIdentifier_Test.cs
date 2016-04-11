@@ -18,8 +18,8 @@ namespace Ebergstedt.Overwatch.Counters.Test
         public void IdentifyHero()
         {
             var loadFromConfig = _heroLoader.LoadHeroConfig(
-                                                              HeroConfigPath,
-                                                              Environment.CurrentDirectory);
+                                                            HeroConfigPath,
+                                                            Environment.CurrentDirectory);
 
             var heroWithMetaDatas = _heroLoader.LoadWithMetaData(loadFromConfig);
 
@@ -33,7 +33,8 @@ namespace Ebergstedt.Overwatch.Counters.Test
 
             var heroWithMetaData = heroWithMetaDatas.First();
 
-            var identifyHeroId = heroIdentifier.GetHeroIdByMugshot(heroWithMetaData.Mugshot);
+            var identifyHeroId = heroIdentifier.GetHeroIdByMugshot(
+                                                                   heroWithMetaData.Mugshot);
 
             Assert.True(heroWithMetaData.Id == identifyHeroId);
         }
@@ -42,8 +43,8 @@ namespace Ebergstedt.Overwatch.Counters.Test
         public void IdentifyHeroWrong()
         {
             var loadFromConfig = _heroLoader.LoadHeroConfig(
-                                                              HeroConfigPath,
-                                                              Environment.CurrentDirectory);
+                                                            HeroConfigPath,
+                                                            Environment.CurrentDirectory);
 
             var heroWithMetaDatas = _heroLoader.LoadWithMetaData(loadFromConfig);
 
@@ -81,9 +82,11 @@ namespace Ebergstedt.Overwatch.Counters.Test
                                                                .ToList());
 
             var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
-                                                                                                (Bitmap)Bitmap.FromFile(FakeScreenShotPath),
-                                                                                                HeroLoader.LoadMugshotLocations(MugshotLocationsConfigPath, ScreenResolution.FullHD),
-                                                                                                ScreenResolution.FullHD);
+                                                                                                (Bitmap)Bitmap.FromFile(
+                                                                                                                        FakeScreenShotPath),
+                                                                                                HeroLoader.LoadMugshotLocations(
+                                                                                                                                MugshotLocationsConfigPath, 
+                                                                                                                                ScreenResolution.FullHD));
 
             foreach (var mugshot in extractHeroMugshotsByScreenShot)
             {

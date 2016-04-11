@@ -12,7 +12,8 @@ namespace Ebergstedt.Overwatch.Counters
 
     public static class ScreenBounds
     {
-        public static Rectangle GetRectangleByScreenResolution(ScreenResolution screenResolution = ScreenResolution.FullHD)
+        public static Rectangle GetRectangleByScreenResolution(
+                                                               ScreenResolution screenResolution = ScreenResolution.FullHD)
         {
             switch (screenResolution)
             {

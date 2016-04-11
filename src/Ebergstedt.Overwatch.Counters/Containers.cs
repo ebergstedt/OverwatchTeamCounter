@@ -12,11 +12,18 @@ namespace Ebergstedt.Overwatch.Counters
     public class MugshotLocations
     {
         public List<List<int>> LocationPoints { get; set; }
+
+        public int PortraitHeight { get; set; }
+
+        public int PortraitWidth { get; set; }
     }
 
     public class MugshotLocationsConfig
     {
-        public List<List<int>> FullHD { get; set; }
+        public List<List<int>> FullHDHeroPortraitLocations { get; set; }
+
+        public int FullHDPortraitHeight { get; set; }
+        public int FullHDPortraitWidth { get; set; }
     }
 
     public class HeroesConfig

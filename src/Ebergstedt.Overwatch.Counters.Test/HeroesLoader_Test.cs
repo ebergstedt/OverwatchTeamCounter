@@ -15,7 +15,8 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void LoadMugshotsConfig()
         {
-            var mugshotLocations = HeroLoader.LoadMugshotLocations(MugshotLocationsConfigPath);
+            var mugshotLocations = HeroLoader.LoadMugshotLocations(
+                                                                   MugshotLocationsConfigPath);
 
             Assert.True(mugshotLocations.LocationPoints.Any());
         }

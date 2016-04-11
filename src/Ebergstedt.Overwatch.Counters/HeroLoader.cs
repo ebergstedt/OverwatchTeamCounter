@@ -29,7 +29,9 @@ namespace Ebergstedt.Overwatch.Counters
                 case ScreenResolution.FullHD:
                     return new MugshotLocations()
                     {
-                        LocationPoints = mugshotLocationsConfig.FullHD
+                        LocationPoints = mugshotLocationsConfig.FullHDHeroPortraitLocations,
+                        PortraitWidth = mugshotLocationsConfig.FullHDPortraitWidth,
+                        PortraitHeight = mugshotLocationsConfig.FullHDPortraitHeight
                     };
             }
 
@@ -45,11 +47,14 @@ namespace Ebergstedt.Overwatch.Counters
 
             var readAllText = File.ReadAllText(configPath);
 
-            HeroesConfig heroesConfig = JsonConvert.DeserializeObject<HeroesConfig>(readAllText);
+            HeroesConfig heroesConfig = JsonConvert.DeserializeObject<HeroesConfig>(
+                                                                                    readAllText);
 
             foreach (var hero in heroesConfig.Heroes)
             {
-                hero.MugshotFilePath = Path.Combine(rootPath, hero.MugshotFilePath);
+                hero.MugshotFilePath = Path.Combine(
+                                                    rootPath, 
+                                                    hero.MugshotFilePath);
             }
 
             return heroesConfig.Heroes;

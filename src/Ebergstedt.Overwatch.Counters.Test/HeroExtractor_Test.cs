@@ -17,9 +17,11 @@ namespace Ebergstedt.Overwatch.Counters.Test
         public void ExtractHeroMugshotsByScreenShot()
         {
             var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
-                                                                                                (Bitmap) Bitmap.FromFile(FakeScreenShotPath),
-                                                                                                HeroLoader.LoadMugshotLocations(MugshotLocationsConfigPath, ScreenResolution.FullHD),
-                                                                                                ScreenResolution.FullHD);
+                                                                                                (Bitmap) Bitmap.FromFile(
+                                                                                                                         FakeScreenShotPath),
+                                                                                                HeroLoader.LoadMugshotLocations(
+                                                                                                                                MugshotLocationsConfigPath, 
+                                                                                                                                ScreenResolution.FullHD));
 
             Assert.True(extractHeroMugshotsByScreenShot.Any());
         }
