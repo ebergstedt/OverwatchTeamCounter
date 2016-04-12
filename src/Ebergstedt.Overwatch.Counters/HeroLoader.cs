@@ -14,6 +14,8 @@ namespace Ebergstedt.Overwatch.Counters
     public class HeroLoader
     {
 
+        private OverwatchWinrateApi OverwatchWinrateApi = new OverwatchWinrateApi();
+
         public MugshotLocations LoadMugshotLocations(
                                                           [NotNull] string configPath,
                                                           ScreenResolution screenResolution = ScreenResolution.FullHD)
@@ -58,7 +60,7 @@ namespace Ebergstedt.Overwatch.Counters
         public IEnumerable<HeroWithMetaData> LoadWithMetaData(
                                                               [NotNull] IEnumerable<Hero> heroes)
         {
-            if (heroes == null) throw new ArgumentNullException(nameof(heroes));
+            if (heroes == null) throw new ArgumentNullException(nameof(heroes));            
 
             foreach (var hero in heroes)
             {
@@ -66,8 +68,8 @@ namespace Ebergstedt.Overwatch.Counters
                                                   hero.Name,
                                                   hero.Id,
                                                   (Bitmap) Image.FromFile(hero.MugshotFilePath), 
-                                                  new List<HeroWinRate>(),
-                                                  new List<MapWinRate>());
+                                                  OverwatchWinrateApi.GetHeroWinratesAgainstHero(hero.Id),
+                                                  OverwatchWinrateApi.GetMapWinratesForHero(hero.Id));
             }
         }
     }

@@ -40,7 +40,7 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 
                 Console.WriteLine("Calculating winrates.");
 
-                Console.WriteLine("Best hero to chose currently:");
+                Console.WriteLine("Best hero to chose (in order):");
 
                 Console.WriteLine("Sleeping 5000ms.");
                 Thread.Sleep(5000);

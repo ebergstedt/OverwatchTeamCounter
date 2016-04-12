@@ -67,6 +67,7 @@
     <Compile Include="HeroLoader.cs" />
     <Compile Include="HeroExtractor.cs" />
     <Compile Include="HeroIdentifier.cs" />
+    <Compile Include="OverwatchWinrateAPI.cs" />
     <Compile Include="ScreenBounds.cs" />
     <Compile Include="ScreenCapturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
