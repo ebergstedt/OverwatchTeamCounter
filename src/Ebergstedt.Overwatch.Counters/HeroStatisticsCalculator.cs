@@ -17,13 +17,13 @@ namespace Ebergstedt.Overwatch.Counters
     {
         readonly OverwatchWinrateApi _overwatchWinrateApi = new OverwatchWinrateApi();    
         
-        public IEnumerable<int> GetBestOrderedHeroCountersForTeamComposition(
-                                                                             IEnumerable<int> enemyHeroIds,
-                                                                             int mapId)
+        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
+                                                                               IEnumerable<int> enemyHeroIds,
+                                                                               int mapId)
         {
             List<HeroWinrateCalculationResult> heroWinrateCalculationResults = new List<HeroWinrateCalculationResult>();
 
-            foreach (var enemyHeroId in enemyHeroIds)
+            foreach (var enemyHeroId in enemyHeroIds.Distinct())
             {
                 IEnumerable<HeroWinRate> heroWinratesAgainstHero = _overwatchWinrateApi.GetHeroWinratesAgainstHero(
                                                                                                                    enemyHeroId);
@@ -48,17 +48,33 @@ namespace Ebergstedt.Overwatch.Counters
                 }
             }
 
+            foreach (var heroWinrateCalculationResult in heroWinrateCalculationResults)
+            {
+                MapWinRate mapWinrateForHero = _overwatchWinrateApi.GetMapWinratesForHero(
+                                                                                          heroWinrateCalculationResult.HeroId)
+                                                                   .SingleOrDefault(m => m.MapId == mapId);
+
+                if(mapWinrateForHero == null)
+                    continue;
+
+                var winrateCalculationResult = heroWinrateCalculationResults.Single(h => h.HeroId == heroWinrateCalculationResult.HeroId);
+
+                //add a single resultant to the total winrate
+                winrateCalculationResult.WinResultant += mapWinrateForHero.Percentage;
+            }
+
+            //sort by hero having the most total winrate against the enemy team
             return heroWinrateCalculationResults.OrderByDescending(w => w.WinResultant)
                                                 .Select(h => h.HeroId);
         }
 
-        public IEnumerable<int> GetBestOrderedHeroCountersForTeamComposition(
+        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
                                                                              IEnumerable<int> enemyHeroIds,
                                                                              IEnumerable<int> alliedHeroIds,
                                                                              int mapId)
         {
             //todo alliedHeroIds
-            return GetBestOrderedHeroCountersForTeamComposition(
+            return GetBestOrderedHeroIdCountersForTeamComposition(
                                                           enemyHeroIds,
                                                           mapId);
         }

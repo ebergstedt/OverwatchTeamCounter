@@ -46,7 +46,7 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 
                 Console.WriteLine("Calculating winrates.");
 
-                IEnumerable<int> bestHeroIds = heroStatisticsCalculator.GetBestOrderedHeroCountersForTeamComposition(
+                IEnumerable<int> bestHeroIds = heroStatisticsCalculator.GetBestOrderedHeroIdCountersForTeamComposition(
                                                                                                                      enemyHeroIds,
                                                                                                                      mapId);
 
