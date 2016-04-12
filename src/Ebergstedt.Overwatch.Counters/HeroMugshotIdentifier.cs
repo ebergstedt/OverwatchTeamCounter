@@ -10,28 +10,21 @@ using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters
 {
-    public class HeroIdentifier
+    public class HeroMugshotIdentifier
     {
-        private List<HeroWithMugShot> _heroesWithMugShots { get; }
-
-        public HeroIdentifier([NotNull]List<HeroWithMugShot> heroesWithMugShots)
-        {
-            if (heroesWithMugShots == null) throw new ArgumentNullException(nameof(heroesWithMugShots));
-
-            _heroesWithMugShots = heroesWithMugShots;
-        }
-
-        public int GetHeroIdByMugshot([NotNull] Bitmap targetHeroBitmap)
+        public int GetHeroIdByMugshot(
+                                      [NotNull] Bitmap targetHeroBitmap,
+                                      IEnumerable<Tuple<int, Bitmap>> templateHeroIdBitmaps)
         {
             if (targetHeroBitmap == null) throw new ArgumentNullException(nameof(targetHeroBitmap));
 
             List<Tuple<float, int>> results = new List<Tuple<float, int>>();
 
-            foreach (var heroWithMugShot in _heroesWithMugShots)
+            foreach (var templateHeroe in templateHeroIdBitmaps)
             {
                 Bitmap template = ResizeTemplateToTargetSize(
-                                                             targetHeroBitmap, 
-                                                             heroWithMugShot.Mugshot);
+                                                             targetHeroBitmap,
+                                                             templateHeroe.Item2);
 
                 ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0);
                 TemplateMatch[] matchings = tm.ProcessImage(
@@ -39,7 +32,7 @@ namespace Ebergstedt.Overwatch.Counters
                                                             template);
                 results.Add(new Tuple<float, int>(
                                                   matchings[0].Similarity,
-                                                  heroWithMugShot.Id));
+                                                  templateHeroe.Item1));
             }
 
             if (!results.Any())

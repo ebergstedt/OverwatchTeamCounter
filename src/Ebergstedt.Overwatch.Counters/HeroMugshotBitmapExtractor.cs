@@ -9,7 +9,7 @@ using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters
 {
-    public class HeroExtractor
+    public class HeroMugshotBitmapExtractor
     {
         public IEnumerable<Bitmap> ExtractHeroMugshotsByScreenShot(
                                                                    [NotNull] Bitmap screenShot,

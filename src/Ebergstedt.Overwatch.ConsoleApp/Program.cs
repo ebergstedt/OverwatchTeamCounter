@@ -21,27 +21,36 @@ namespace Ebergstedt.Overwatch.ConsoleApp
             Cleanup();
 
             ScreenCapturer screenCapturer = new ScreenCapturer();
-            HeroFinder heroFinder = new HeroFinder();
-
-            //ghetto solution to be fixed
+            HeroScreenshotIdentityExtractor heroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
+            StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
+            
             while (true)
             {
+                int mapId = 0;
+
+                Console.WriteLine($"Chosen map: {mapId}");
+
                 Console.WriteLine("Taking sceenshot.");
 
                 var activeScreenCapture = screenCapturer.GetActiveScreenCapture(
-                                                                                 ScreenBounds.GetRectangleByScreenResolution(
+                                                                                 ScreenBoundsCalculator.GetRectangleByScreenResolution(
                                                                                                                              ScreenResolution.FullHD));
-                IEnumerable<JsonContainers.Hero> enemyHeroes = heroFinder.FindEnemyHeroesByScreenshot(activeScreenCapture);
-                
-                Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroes?.Select(s => new { s.Name }))}");
 
-                IEnumerable<JsonContainers.Hero> friendlyHeroes = heroFinder.FindAlliedHeroesByScreenshot(activeScreenCapture);
+                IEnumerable<int> enemyHeroIds = heroScreenshotIdentityExtractor.FindEnemyHeroesByScreenshot(activeScreenCapture);
 
-                Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroes?.Select(s => new { s.Name }))}");
+                Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(id => new { id }))}");
+
+                IEnumerable<int> friendlyHeroIds = heroScreenshotIdentityExtractor.FindAlliedHeroesByScreenshot(activeScreenCapture);
+
+                Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(id => new { id }))}");
 
                 Console.WriteLine("Calculating winrates.");
 
-                Console.WriteLine("Best hero to chose (in order):");
+                IEnumerable<int> bestHeroIds = statisticsCalculator.GetBestOrderedHeroesForTeamComposition(
+                                                                                                           enemyHeroIds,
+                                                                                                           mapId);
+
+                Console.WriteLine($"Best hero to chose (in order): { JsonConvert.SerializeObject(bestHeroIds?.Select(id => new { id }))}");
 
                 Console.WriteLine("Sleeping 5000ms.");
                 Thread.Sleep(5000);

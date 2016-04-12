@@ -16,11 +16,9 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void ExtractEnemyHeroMugshotsByScreenShot()
         {
-            var loadMugshotLocations = HeroLoader.LoadMugshotLocations(
-                                                                        MugshotLocationsConfigPath,
-                                                                        ScreenResolution.FullHD);
+            var loadMugshotLocations = JsonConfigLoader.LoadMugshotLocations();
 
-            var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
+            var extractHeroMugshotsByScreenShot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap) Bitmap.FromFile(
                                                                                                                          FakeScreenShotPath),
                                                                                                 loadMugshotLocations.EnemyLocationPoints,
@@ -33,11 +31,9 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void ExtractAlliedHeroMugshotsByScreenShot()
         {
-            var loadMugshotLocations = HeroLoader.LoadMugshotLocations(
-                                                                        MugshotLocationsConfigPath,
-                                                                        ScreenResolution.FullHD);
+            var loadMugshotLocations = JsonConfigLoader.LoadMugshotLocations();
 
-            var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
+            var extractHeroMugshotsByScreenShot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap)Bitmap.FromFile(
                                                                                                                          FakeScreenShotPath),
                                                                                                 loadMugshotLocations.AlliedLocationPoints,

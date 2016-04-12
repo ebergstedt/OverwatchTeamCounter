@@ -10,7 +10,7 @@ using Ebergstedt.Overwatch.Counters.Enums;
 namespace Ebergstedt.Overwatch.Counters
 {
 
-    public static class ScreenBounds
+    public static class ScreenBoundsCalculator
     {
         public static Rectangle GetRectangleByScreenResolution(
                                                                ScreenResolution screenResolution = ScreenResolution.FullHD)

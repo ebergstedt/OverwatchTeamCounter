@@ -16,7 +16,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         public void ScreenShot()
         {
             var activeScreenCapture = ScreenCapturer.GetActiveScreenCapture(
-                                                                            ScreenBounds.GetRectangleByScreenResolution(
+                                                                            ScreenBoundsCalculator.GetRectangleByScreenResolution(
                                                                                                                         ScreenResolution.FullHD));
 
             Assert.NotNull(activeScreenCapture);

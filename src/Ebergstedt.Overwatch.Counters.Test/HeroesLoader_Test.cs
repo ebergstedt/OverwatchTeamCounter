@@ -15,8 +15,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void LoadMugshotsConfig()
         {
-            var mugshotLocations = HeroLoader.LoadMugshotLocations(
-                                                                   MugshotLocationsConfigPath);
+            var mugshotLocations = JsonConfigLoader.LoadMugshotLocations();
 
             Assert.True(mugshotLocations.EnemyLocationPoints.Any());
         }
@@ -25,24 +24,9 @@ namespace Ebergstedt.Overwatch.Counters.Test
         public void HeroesConfig()
         {            
 
-            var heroes = HeroLoader.LoadHeroConfig(
-                                                   HeroConfigPath,
-                                                   Environment.CurrentDirectory);
+            var heroes = JsonConfigLoader.LoadHeroConfig();
 
             Assert.True(heroes.Any());
-        }
-
-        [Test]
-        public void MetaData()
-        {
-            var heroes = HeroLoader.LoadHeroConfig(
-                                                   HeroConfigPath,
-                                                   Environment.CurrentDirectory);
-
-            var heroWithMetaDatas = HeroLoader.LoadWithMetaData(
-                                                                heroes);
-
-            Assert.True(heroWithMetaDatas.Any());
         }
     }
 }

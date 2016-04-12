@@ -13,80 +13,16 @@ namespace Ebergstedt.Overwatch.Counters.Test
     [TestFixture]
     class HeroIdentifier_Test : TestBase
     {
-        readonly HeroLoader _heroLoader = new HeroLoader();        
-
-        [Test]
-        public void IdentifyHero()
-        {
-            var loadFromConfig = _heroLoader.LoadHeroConfig(
-                                                            HeroConfigPath,
-                                                            Environment.CurrentDirectory);
-
-            var heroWithMetaDatas = _heroLoader.LoadWithMetaData(loadFromConfig);
-
-            HeroIdentifier heroIdentifier = new HeroIdentifier(
-                                                               heroWithMetaDatas.Select(h => new HeroWithMugShot()
-                                                               {
-                                                                   Id = h.Id,
-                                                                   Mugshot = h.Mugshot
-                                                               })
-                                                               .ToList());
-
-            var heroWithMetaData = heroWithMetaDatas.First();
-
-            var identifyHeroId = heroIdentifier.GetHeroIdByMugshot(
-                                                                   heroWithMetaData.Mugshot);
-
-            Assert.True(heroWithMetaData.Id == identifyHeroId);
-        }
-
-        [Test]
-        public void IdentifyHeroWrong()
-        {
-            var loadFromConfig = _heroLoader.LoadHeroConfig(
-                                                            HeroConfigPath,
-                                                            Environment.CurrentDirectory);
-
-            var heroWithMetaDatas = _heroLoader.LoadWithMetaData(loadFromConfig);
-
-            HeroIdentifier heroIdentifier = new HeroIdentifier(
-                                                               heroWithMetaDatas.Select(h => new HeroWithMugShot()
-                                                               {
-                                                                   Id = h.Id,
-                                                                   Mugshot = h.Mugshot
-                                                               })
-                                                               .ToList());
-
-            var heroWithMetaData = heroWithMetaDatas.First();
-            var heroWithMetaData2 = heroWithMetaDatas.ToList()[2];
-
-            var identifyHeroId = heroIdentifier.GetHeroIdByMugshot(heroWithMetaData2.Mugshot);
-
-            Assert.True(heroWithMetaData.Id != identifyHeroId);
-        }
-
+        readonly JsonConfigLoader _jsonConfigLoader = new JsonConfigLoader(Environment.CurrentDirectory);        
+        
         [Test]
         public void IdentifyAllEnemyHeroesByScreenShot()
         {
-            var loadFromConfig = _heroLoader.LoadHeroConfig(
-                                                            HeroConfigPath,
-                                                            Environment.CurrentDirectory);
+            HeroMugshotIdentifier heroMugshotIdentifier = new HeroMugshotIdentifier();
 
-            var heroWithMetaDatas = _heroLoader.LoadWithMetaData(loadFromConfig);
+            var loadMugshotLocations = JsonConfigLoader.LoadMugshotLocations();
 
-            HeroIdentifier heroIdentifier = new HeroIdentifier(
-                                                               heroWithMetaDatas.Select(h => new HeroWithMugShot()
-                                                               {
-                                                                   Id = h.Id,
-                                                                   Mugshot = h.Mugshot
-                                                               })
-                                                               .ToList());
-
-            var loadMugshotLocations = HeroLoader.LoadMugshotLocations(
-                                                                        MugshotLocationsConfigPath,
-                                                                        ScreenResolution.FullHD);
-
-            var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
+            var extractHeroMugshotsByScreenShot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap)Bitmap.FromFile(
                                                                                                                          FakeScreenShotPath),
                                                                                                 loadMugshotLocations.EnemyLocationPoints,
@@ -107,7 +43,9 @@ namespace Ebergstedt.Overwatch.Counters.Test
 
             foreach (var mugshot in extractHeroMugshotsByScreenShot)
             {
-                var heroIdByMugshot = heroIdentifier.GetHeroIdByMugshot(mugshot);
+                var heroIdByMugshot = heroMugshotIdentifier.GetHeroIdByMugshot(
+                                                                        mugshot,
+                                                                        JsonConfigLoader.LoadHeroIdMugshotBitmaps());
 
                 Assert.True(correctMugshotsHeroIdsOnFakeScreenshot[index] == heroIdByMugshot);
 

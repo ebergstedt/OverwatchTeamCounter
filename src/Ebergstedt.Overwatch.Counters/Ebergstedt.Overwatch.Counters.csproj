@@ -64,15 +64,16 @@
     <Compile Include="BitmapTransformer.cs" />
     <Compile Include="Containers\Containers.cs" />
     <Compile Include="Containers\JsonContainers.cs" />
-    <Compile Include="HeroFinder.cs" />
-    <Compile Include="HeroLoader.cs" />
-    <Compile Include="HeroExtractor.cs" />
-    <Compile Include="HeroIdentifier.cs" />
+    <Compile Include="HeroScreenshotIdentityExtractor.cs" />
+    <Compile Include="JsonConfigLoader.cs" />
+    <Compile Include="HeroMugshotBitmapExtractor.cs" />
+    <Compile Include="HeroMugshotIdentifier.cs" />
     <Compile Include="OverwatchWinrateAPI.cs" />
-    <Compile Include="ScreenBounds.cs" />
+    <Compile Include="ScreenBoundsCalculator.cs" />
     <Compile Include="ScreenCapturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\ScreenResolution.cs" />
+    <Compile Include="StatisticsCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
