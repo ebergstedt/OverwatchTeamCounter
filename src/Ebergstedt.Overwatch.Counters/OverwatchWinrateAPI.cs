@@ -9,12 +9,12 @@ namespace Ebergstedt.Overwatch.Counters
 {
     public class OverwatchWinrateApi
     {
-        public List<HeroWinRate> GetHeroWinratesAgainstHero(int heroId)
+        public IEnumerable<HeroWinRate> GetHeroWinratesAgainstHero(int heroId)
         {
             return new List<HeroWinRate>();
         }
 
-        public List<MapWinRate> GetMapWinratesForHero(int heroId)
+        public IEnumerable<MapWinRate> GetMapWinratesForHero(int heroId)
         {
             return new List<MapWinRate>();
         }

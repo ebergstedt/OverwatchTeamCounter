@@ -68,12 +68,12 @@
     <Compile Include="JsonConfigLoader.cs" />
     <Compile Include="HeroMugshotBitmapExtractor.cs" />
     <Compile Include="HeroMugshotIdentifier.cs" />
-    <Compile Include="OverwatchWinrateAPI.cs" />
+    <Compile Include="OverwatchWinrateApi.cs" />
     <Compile Include="ScreenBoundsCalculator.cs" />
     <Compile Include="ScreenCapturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\ScreenResolution.cs" />
-    <Compile Include="StatisticsCalculator.cs" />
+    <Compile Include="HeroStatisticsCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

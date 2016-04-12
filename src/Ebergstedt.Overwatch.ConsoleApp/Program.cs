@@ -22,7 +22,7 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 
             ScreenCapturer screenCapturer = new ScreenCapturer();
             HeroScreenshotIdentityExtractor heroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
-            StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
+            HeroStatisticsCalculator heroStatisticsCalculator = new HeroStatisticsCalculator();
             
             while (true)
             {
@@ -34,7 +34,7 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 
                 var activeScreenCapture = screenCapturer.GetActiveScreenCapture(
                                                                                  ScreenBoundsCalculator.GetRectangleByScreenResolution(
-                                                                                                                             ScreenResolution.FullHD));
+                                                                                                                                       ScreenResolution.FullHD));
 
                 IEnumerable<int> enemyHeroIds = heroScreenshotIdentityExtractor.FindEnemyHeroesByScreenshot(activeScreenCapture);
 
@@ -46,9 +46,9 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 
                 Console.WriteLine("Calculating winrates.");
 
-                IEnumerable<int> bestHeroIds = statisticsCalculator.GetBestOrderedHeroesForTeamComposition(
-                                                                                                           enemyHeroIds,
-                                                                                                           mapId);
+                IEnumerable<int> bestHeroIds = heroStatisticsCalculator.GetBestOrderedHeroCountersForTeamComposition(
+                                                                                                                     enemyHeroIds,
+                                                                                                                     mapId);
 
                 Console.WriteLine($"Best hero to chose (in order): { JsonConvert.SerializeObject(bestHeroIds?.Select(id => new { id }))}");
 
