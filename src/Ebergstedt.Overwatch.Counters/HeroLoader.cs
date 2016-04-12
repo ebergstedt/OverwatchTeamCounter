@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.Overwatch.Counters.Enums;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -16,7 +17,7 @@ namespace Ebergstedt.Overwatch.Counters
 
         private OverwatchWinrateApi OverwatchWinrateApi = new OverwatchWinrateApi();
 
-        public MugshotLocations LoadMugshotLocations(
+        public JsonContainers.MugshotLocations LoadMugshotLocations(
                                                           [NotNull] string configPath,
                                                           ScreenResolution screenResolution = ScreenResolution.FullHD)
         {
@@ -24,7 +25,7 @@ namespace Ebergstedt.Overwatch.Counters
 
             var readAllText = File.ReadAllText(configPath);
 
-            var mugshotLocationsConfig = JsonConvert.DeserializeObject<MugshotLocationsConfig>(readAllText);
+            var mugshotLocationsConfig = JsonConvert.DeserializeObject<JsonContainers.MugshotLocationsConfig>(readAllText);
 
             switch (screenResolution)
             {
@@ -35,7 +36,7 @@ namespace Ebergstedt.Overwatch.Counters
             throw new NotImplementedException(nameof(screenResolution));
         }
 
-        public IEnumerable<Hero> LoadHeroConfig(
+        public IEnumerable<JsonContainers.Hero> LoadHeroConfig(
                                                 [NotNull] string configPath,
                                                 [NotNull] string rootPath)
         {
@@ -44,7 +45,7 @@ namespace Ebergstedt.Overwatch.Counters
 
             var readAllText = File.ReadAllText(configPath);
 
-            HeroesConfig heroesConfig = JsonConvert.DeserializeObject<HeroesConfig>(
+            JsonContainers.HeroesConfig heroesConfig = JsonConvert.DeserializeObject<JsonContainers.HeroesConfig>(
                                                                                     readAllText);
 
             foreach (var hero in heroesConfig.Heroes)
@@ -58,7 +59,7 @@ namespace Ebergstedt.Overwatch.Counters
         }
 
         public IEnumerable<HeroWithMetaData> LoadWithMetaData(
-                                                              [NotNull] IEnumerable<Hero> heroes)
+                                                              [NotNull] IEnumerable<JsonContainers.Hero> heroes)
         {
             if (heroes == null) throw new ArgumentNullException(nameof(heroes));            
 

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.Overwatch.Counters.Enums;
 
 namespace Ebergstedt.Overwatch.Counters
@@ -17,8 +18,8 @@ namespace Ebergstedt.Overwatch.Counters
         HeroLoader HeroLoader => new HeroLoader();
         HeroExtractor HeroExtractor => new HeroExtractor();
 
-        readonly IEnumerable<Hero> _heroList;
-        readonly MugshotLocations _mugshotLocations;
+        readonly IEnumerable<JsonContainers.Hero> _heroList;
+        readonly JsonContainers.MugshotLocations _mugshotLocations;
         readonly HeroIdentifier _heroIdentifier;
         public HeroFinder()
         {
@@ -42,7 +43,7 @@ namespace Ebergstedt.Overwatch.Counters
                                                  .ToList());
         }
 
-        public IEnumerable<Hero> FindEnemyHeroesByScreenshot(
+        public IEnumerable<JsonContainers.Hero> FindEnemyHeroesByScreenshot(
                                                              Bitmap screenShot)
         {     
             var heroesByScreenshot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
@@ -59,7 +60,7 @@ namespace Ebergstedt.Overwatch.Counters
             return _heroList.Where(h => identifiedEnemyHeroIds.Contains(h.Id));            
         }
 
-        public IEnumerable<Hero> FindAlliedHeroesByScreenshot(
+        public IEnumerable<JsonContainers.Hero> FindAlliedHeroesByScreenshot(
                                                               Bitmap screenShot)
         {
             var heroesByScreenshot = HeroExtractor.ExtractHeroMugshotsByScreenShot(

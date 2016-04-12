@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.Overwatch.Counters.Enums;
 using NUnit.Framework;
 

@@ -1,48 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Newtonsoft.Json.Linq;
 
-namespace Ebergstedt.Overwatch.Counters
+namespace Ebergstedt.Overwatch.Counters.Containers
 {
-    public class MugshotLocations
-    {
-        public List<List<int>> EnemyLocationPoints { get; set; }
-
-        public List<List<int>> AlliedLocationPoints { get; set; }
-
-        public int PortraitHeight { get; set; }
-
-        public int PortraitWidth { get; set; }
-    }
-
-    public class MugshotLocationsConfig
-    {
-        public MugshotLocations FullHD { get; set; }
-    }
-
-    public class HeroesConfig
-    {
-        public List<Hero> Heroes { get; set; }
-    }
-
     public class HeroWithMugShot
     {
         public int Id { get; set; }
         public Bitmap Mugshot { get; set; }
-    }
-
-    public class Hero
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }       
-        
-        public string MugshotFilePath { get; set; } 
     }
 
     public class HeroWithMetaData

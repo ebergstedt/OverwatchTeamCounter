@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AForge.Imaging;
+using Ebergstedt.Overwatch.Counters.Containers;
 using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters

@@ -62,7 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitmapTransformer.cs" />
-    <Compile Include="Containers.cs" />
+    <Compile Include="Containers\Containers.cs" />
+    <Compile Include="Containers\JsonContainers.cs" />
     <Compile Include="HeroFinder.cs" />
     <Compile Include="HeroLoader.cs" />
     <Compile Include="HeroExtractor.cs" />

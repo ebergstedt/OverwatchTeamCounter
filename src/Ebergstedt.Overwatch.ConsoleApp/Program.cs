@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Ebergstedt.Overwatch.Counters;
+using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.Overwatch.Counters.Enums;
 using Newtonsoft.Json;
 
@@ -30,11 +31,11 @@ namespace Ebergstedt.Overwatch.ConsoleApp
                 var activeScreenCapture = screenCapturer.GetActiveScreenCapture(
                                                                                  ScreenBounds.GetRectangleByScreenResolution(
                                                                                                                              ScreenResolution.FullHD));
-                IEnumerable<Hero> enemyHeroes = heroFinder.FindEnemyHeroesByScreenshot(activeScreenCapture);
+                IEnumerable<JsonContainers.Hero> enemyHeroes = heroFinder.FindEnemyHeroesByScreenshot(activeScreenCapture);
                 
                 Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroes?.Select(s => new { s.Name }))}");
 
-                IEnumerable<Hero> friendlyHeroes = heroFinder.FindAlliedHeroesByScreenshot(activeScreenCapture);
+                IEnumerable<JsonContainers.Hero> friendlyHeroes = heroFinder.FindAlliedHeroesByScreenshot(activeScreenCapture);
 
                 Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroes?.Select(s => new { s.Name }))}");
 
