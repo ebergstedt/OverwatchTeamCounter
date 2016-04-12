@@ -14,14 +14,35 @@ namespace Ebergstedt.Overwatch.Counters.Test
     public class HeroExtractor_Test : TestBase
     {
         [Test]
-        public void ExtractHeroMugshotsByScreenShot()
+        public void ExtractEnemyHeroMugshotsByScreenShot()
         {
+            var loadMugshotLocations = HeroLoader.LoadMugshotLocations(
+                                                                        MugshotLocationsConfigPath,
+                                                                        ScreenResolution.FullHD);
+
             var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap) Bitmap.FromFile(
                                                                                                                          FakeScreenShotPath),
-                                                                                                HeroLoader.LoadEnemyMugshotLocations(
-                                                                                                                                MugshotLocationsConfigPath, 
-                                                                                                                                ScreenResolution.FullHD));
+                                                                                                loadMugshotLocations.EnemyLocationPoints,
+                                                                                                loadMugshotLocations.PortraitWidth,
+                                                                                                loadMugshotLocations.PortraitHeight);
+
+            Assert.True(extractHeroMugshotsByScreenShot.Any());
+        }
+
+        [Test]
+        public void ExtractAlliedHeroMugshotsByScreenShot()
+        {
+            var loadMugshotLocations = HeroLoader.LoadMugshotLocations(
+                                                                        MugshotLocationsConfigPath,
+                                                                        ScreenResolution.FullHD);
+
+            var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
+                                                                                                (Bitmap)Bitmap.FromFile(
+                                                                                                                         FakeScreenShotPath),
+                                                                                                loadMugshotLocations.AlliedLocationPoints,
+                                                                                                loadMugshotLocations.PortraitWidth,
+                                                                                                loadMugshotLocations.PortraitHeight);
 
             Assert.True(extractHeroMugshotsByScreenShot.Any());
         }

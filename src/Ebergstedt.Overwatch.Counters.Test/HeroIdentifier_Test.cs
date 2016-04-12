@@ -81,12 +81,16 @@ namespace Ebergstedt.Overwatch.Counters.Test
                                                                })
                                                                .ToList());
 
+            var loadMugshotLocations = HeroLoader.LoadMugshotLocations(
+                                                                        MugshotLocationsConfigPath,
+                                                                        ScreenResolution.FullHD);
+
             var extractHeroMugshotsByScreenShot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap)Bitmap.FromFile(
-                                                                                                                        FakeScreenShotPath),
-                                                                                                HeroLoader.LoadEnemyMugshotLocations(
-                                                                                                                                MugshotLocationsConfigPath, 
-                                                                                                                                ScreenResolution.FullHD));
+                                                                                                                         FakeScreenShotPath),
+                                                                                                loadMugshotLocations.EnemyLocationPoints,
+                                                                                                loadMugshotLocations.PortraitWidth,
+                                                                                                loadMugshotLocations.PortraitHeight);
 
             List<int> correctMugshotsHeroIdsOnFakeScreenshot = new List<int>()
             {

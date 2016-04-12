@@ -17,49 +17,63 @@ namespace Ebergstedt.Overwatch.Counters
         HeroLoader HeroLoader => new HeroLoader();
         HeroExtractor HeroExtractor => new HeroExtractor();
 
-        BitmapTransformer BitmapTransformer => new BitmapTransformer();
-
-        IEnumerable<Hero> heroList;
-        MugshotLocations mugshotLocations;
+        readonly IEnumerable<Hero> _heroList;
+        readonly MugshotLocations _mugshotLocations;
+        readonly HeroIdentifier _heroIdentifier;
         public HeroFinder()
         {
-            heroList = HeroLoader.LoadHeroConfig(
+            _heroList = HeroLoader.LoadHeroConfig(
                                                HeroConfigPath,
                                                Environment.CurrentDirectory);
 
-            mugshotLocations = HeroLoader.LoadEnemyMugshotLocations(
+            _mugshotLocations = HeroLoader.LoadMugshotLocations(
                                                                MugshotLocationsPath,
                                                                ScreenResolution.FullHD);
+
+            var heroWithMetaDatas = HeroLoader.LoadWithMetaData(_heroList);
+
+
+            _heroIdentifier = new HeroIdentifier(
+                                                 heroWithMetaDatas.Select(h => new HeroWithMugShot()
+                                                 {
+                                                     Id = h.Id,
+                                                     Mugshot = h.Mugshot
+                                                 })
+                                                 .ToList());
         }
 
-        public IEnumerable<Hero> FindEnemyHeroesByScreenshot(Bitmap screenShot)
-        {            
-            
-            var heroWithMetaDatas = HeroLoader.LoadWithMetaData(heroList);
-
+        public IEnumerable<Hero> FindEnemyHeroesByScreenshot(
+                                                             Bitmap screenShot)
+        {     
             var heroesByScreenshot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                    screenShot,
-                                                                                   mugshotLocations
+                                                                                   _mugshotLocations.EnemyLocationPoints,
+                                                                                   _mugshotLocations.PortraitWidth,
+                                                                                   _mugshotLocations.PortraitHeight
                                                                                    );
 
 
-            HeroIdentifier heroIdentifier = new HeroIdentifier(
-                                                               heroWithMetaDatas.Select(h => new HeroWithMugShot()
-                                                               {
-                                                                   Id = h.Id,
-                                                                   Mugshot = h.Mugshot
-                                                               })
-                                                               .ToList());
 
-            IEnumerable<int> identifiedEnemyHeroIds = heroesByScreenshot.Select(h => heroIdentifier.GetHeroIdByMugshot(h));
+            IEnumerable<int> identifiedEnemyHeroIds = heroesByScreenshot.Select(h => _heroIdentifier.GetHeroIdByMugshot(h));
 
-            return heroList.Where(h => identifiedEnemyHeroIds.Contains(h.Id));            
+            return _heroList.Where(h => identifiedEnemyHeroIds.Contains(h.Id));            
         }
 
-        public IEnumerable<Hero> FindAlliedHeroesByScreenshot(Bitmap screenShot)
+        public IEnumerable<Hero> FindAlliedHeroesByScreenshot(
+                                                              Bitmap screenShot)
         {
-            return null;
-            throw new NotImplementedException();
+            var heroesByScreenshot = HeroExtractor.ExtractHeroMugshotsByScreenShot(
+                                                                                   screenShot,
+                                                                                   _mugshotLocations.AlliedLocationPoints,
+                                                                                   _mugshotLocations.PortraitWidth,
+                                                                                   _mugshotLocations.PortraitHeight
+                                                                                   );
+
+
+
+            IEnumerable<int> identifiedAlliedHeroIds = heroesByScreenshot.Select(h => _heroIdentifier.GetHeroIdByMugshot(h));
+
+            return _heroList.Where(h => identifiedAlliedHeroIds.Contains(h.Id));
         }
     }
 }

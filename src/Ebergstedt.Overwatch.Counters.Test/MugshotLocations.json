@@ -1,12 +1,22 @@
 ﻿{
-  "FullHDEnemyHeroPortraitLocations": [
-    [ 400, 288 ],
-    [ 608, 288 ],
-    [ 813, 288 ],
-    [ 1019, 288 ],
-    [ 1225, 288 ],
-    [ 1432, 288 ]
-  ],
-  "FullHDPortraitHeight": 43,
-  "FullHDPortraitWidth": 73
+  "FullHD": {
+    "EnemyLocationPoints": [
+      [ 400, 288 ],
+      [ 608, 288 ],
+      [ 813, 288 ],
+      [ 1019, 288 ],
+      [ 1225, 288 ],
+      [ 1432, 288 ]
+    ],
+    "AlliedLocationPoints": [
+      [ 400, 592 ],
+      [ 608, 592 ],
+      [ 813, 592 ],
+      [ 1019, 592 ],
+      [ 1225, 592 ],
+      [ 1432, 592 ]
+    ],
+    "PortraitHeight": 43,
+    "PortraitWidth": 73
+  }
 }
