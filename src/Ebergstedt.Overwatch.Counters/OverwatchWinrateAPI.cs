@@ -17,14 +17,40 @@ namespace Ebergstedt.Overwatch.Counters
         {
             return _cache.Get(
                               $"GetHeroWinratesAgainstHero({heroId})",
-                              () => new List<HeroWinRate>());            
+                              GetHeroWinRate(heroId));            
         }
 
         public IEnumerable<MapWinRate> GetMapWinratesForHero(int heroId)
         {
             return _cache.Get(
                               $"GetMapWinratesForHero({heroId})",
-                              () => new List<MapWinRate>());
+                              GetMapWinrate(heroId));
+        }
+
+        private List<HeroWinRate> GetHeroWinRate(int heroId)
+        {
+            //todo placeholder
+
+            Random rand = new Random();
+            
+            return Enumerable.Range(1, 21)
+                             .Select(x => new HeroWinRate(
+                                                          (float) rand.Next(45, 55),
+                                                          x))
+                             .ToList();
+        }
+
+        private List<MapWinRate> GetMapWinrate(int heroId)
+        {
+            //todo placeholder
+
+            Random rand = new Random();
+
+            return Enumerable.Range(1, 12)
+                             .Select(x => new MapWinRate(
+                                                          (float)rand.Next(45, 55),
+                                                          x))
+                             .ToList();
         }
     }
 }

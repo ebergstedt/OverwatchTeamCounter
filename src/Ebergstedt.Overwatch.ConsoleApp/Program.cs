@@ -26,7 +26,7 @@ namespace Ebergstedt.Overwatch.ConsoleApp
             
             while (true)
             {
-                int mapId = 0;
+                int mapId = 1;
 
                 Console.WriteLine($"Chosen map: {mapId}");
 
