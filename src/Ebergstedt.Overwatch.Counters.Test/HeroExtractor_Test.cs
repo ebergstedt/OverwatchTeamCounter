@@ -16,7 +16,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void ExtractEnemyHeroMugshotsByScreenShot()
         {
-            var loadMugshotLocations = JsonConfigLoader.LoadMugshotLocations();
+            var loadMugshotLocations = JsonConfigLoader.GetMugshotLocations();
 
             var extractHeroMugshotsByScreenShot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap) Bitmap.FromFile(
@@ -31,7 +31,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void ExtractAlliedHeroMugshotsByScreenShot()
         {
-            var loadMugshotLocations = JsonConfigLoader.LoadMugshotLocations();
+            var loadMugshotLocations = JsonConfigLoader.GetMugshotLocations();
 
             var extractHeroMugshotsByScreenShot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap)Bitmap.FromFile(

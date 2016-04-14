@@ -18,17 +18,20 @@ namespace Ebergstedt.Overwatch.ConsoleApp
     {
         static void Main(string[] args)
         {
+            bool debugMode = args.Contains("-debug");             
+
             Cleanup();
 
             ScreenCapturer screenCapturer = new ScreenCapturer();
             HeroScreenshotIdentityExtractor heroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
             HeroStatisticsCalculator heroStatisticsCalculator = new HeroStatisticsCalculator();
-            
+            MetaDataHelper metaDataHelper = new MetaDataHelper();
+
             while (true)
             {
                 int mapId = 1;
 
-                Console.WriteLine($"Chosen map: {mapId}");
+                Console.WriteLine($"Chosen map: {metaDataHelper.GetMapNameById(mapId)}");
 
                 Console.WriteLine("Taking sceenshot.");
 
@@ -37,12 +40,12 @@ namespace Ebergstedt.Overwatch.ConsoleApp
                                                                                                                                        ScreenResolution.FullHD));
 
                 IEnumerable<int> enemyHeroIds = heroScreenshotIdentityExtractor.FindEnemyHeroesByScreenshot(activeScreenCapture);
-
-                Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(id => new { id }))}");
+                
+                Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(heroId => new { Hero = metaDataHelper.GetHeroNameById(heroId) }))}");
 
                 IEnumerable<int> friendlyHeroIds = heroScreenshotIdentityExtractor.FindAlliedHeroesByScreenshot(activeScreenCapture);
-
-                Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(id => new { id }))}");
+                
+                Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(heroId => new { Hero = metaDataHelper.GetHeroNameById(heroId) }))}");
 
                 Console.WriteLine("Calculating winrates.");
 
@@ -50,9 +53,15 @@ namespace Ebergstedt.Overwatch.ConsoleApp
                                                                                                                        enemyHeroIds,
                                                                                                                        mapId);
 
-                Console.WriteLine($"Best hero to chose (in order): { JsonConvert.SerializeObject(bestHeroIds?.Select(id => new { id }))}");
+                Console.WriteLine($"\nBest hero to chose (in order): ");
+                int i = 1;
+                foreach (var heroId in bestHeroIds.Take(10))
+                {                    
+                    Console.WriteLine($"{i}. { metaDataHelper.GetHeroNameById(heroId)} ");
+                    i++;
+                }
 
-                Console.WriteLine("Sleeping 5000ms.");
+                Console.WriteLine("\nSleeping 5000ms.");
                 Thread.Sleep(5000);
 
                 Console.Clear();

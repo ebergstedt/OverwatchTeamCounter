@@ -1,0 +1,52 @@
+﻿{
+  "Maps": [
+    {
+      "Id": 1,
+      "Name": "Dorado"
+    },
+    {
+      "Id": 2,
+      "Name": "Route 66"
+    },
+    {
+      "Id": 3,
+      "Name": "Watchpoint: Gibraltar"
+    },
+    {
+      "Id": 4,
+      "Name": "Hanamura"
+    },
+    {
+      "Id": 5,
+      "Name": "Temple of Anubis"
+    },
+    {
+      "Id": 6,
+      "Name": "Volskaya Industries"
+    },
+    {
+      "Id": 7,
+      "Name": "Hollywood"
+    },
+    {
+      "Id": 8,
+      "Name": "King's Row"
+    },
+    {
+      "Id": 9,
+      "Name": "Numbani"
+    },
+    {
+      "Id": 10,
+      "Name": "Ilios"
+    },
+    {
+      "Id": 11,
+      "Name": "Lijiang Tower"
+    },
+    {
+      "Id": 12,
+      "Name": "Nepal"
+    }
+  ]
+}

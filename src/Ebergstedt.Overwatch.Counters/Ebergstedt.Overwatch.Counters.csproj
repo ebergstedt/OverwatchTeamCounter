@@ -69,6 +69,7 @@
     <Compile Include="BitmapTransformer.cs" />
     <Compile Include="Containers\Containers.cs" />
     <Compile Include="Containers\JsonContainers.cs" />
+    <Compile Include="MetaDataHelper.cs" />
     <Compile Include="HeroScreenshotIdentityExtractor.cs" />
     <Compile Include="JsonConfigLoader.cs" />
     <Compile Include="HeroMugshotBitmapExtractor.cs" />

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.SimpleMemoryCache.Interfaces;
+using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters
 {
@@ -13,21 +14,24 @@ namespace Ebergstedt.Overwatch.Counters
     {
         private ISimpleMemoryCache _cache = new SimpleMemoryCache.SimpleMemoryCache();
 
-        public IEnumerable<HeroWinRate> GetHeroWinratesAgainstHero(int heroId)
+        public IEnumerable<HeroWinRate> GetHeroWinratesAgainstHero(
+                                                                   [NotNull] int heroId)
         {
             return _cache.Get(
                               $"GetHeroWinratesAgainstHero({heroId})",
                               GetHeroWinRate(heroId));            
         }
 
-        public IEnumerable<MapWinRate> GetMapWinratesForHero(int heroId)
+        public IEnumerable<MapWinRate> GetMapWinratesForHero(
+                                                             [NotNull] int heroId)
         {
             return _cache.Get(
                               $"GetMapWinratesForHero({heroId})",
                               GetMapWinrate(heroId));
         }
 
-        private List<HeroWinRate> GetHeroWinRate(int heroId)
+        private List<HeroWinRate> GetHeroWinRate(
+                                                 [NotNull] int heroId)
         {
             //todo placeholder
 
@@ -40,7 +44,8 @@ namespace Ebergstedt.Overwatch.Counters
                              .ToList();
         }
 
-        private List<MapWinRate> GetMapWinrate(int heroId)
+        private List<MapWinRate> GetMapWinrate(
+                                               [NotNull] int heroId)
         {
             //todo placeholder
 

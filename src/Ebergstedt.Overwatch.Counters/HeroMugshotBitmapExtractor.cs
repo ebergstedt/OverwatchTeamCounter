@@ -14,13 +14,12 @@ namespace Ebergstedt.Overwatch.Counters
         public IEnumerable<Bitmap> ExtractHeroMugshotsByScreenShot(
                                                                    [NotNull] Bitmap screenShot,
                                                                    [NotNull] List<List<int>> mugshotLocations,
-                                                                   int portraitWidth,
-                                                                   int portraitHeight)
+                                                                   [NotNull] int portraitWidth,
+                                                                   [NotNull] int portraitHeight)
         {
             if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
             if (mugshotLocations == null) throw new ArgumentNullException(nameof(mugshotLocations));
-
-
+            
             foreach (var mugshotLocationPoint in mugshotLocations)
             {
                 Rectangle bounds = new Rectangle(

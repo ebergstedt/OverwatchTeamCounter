@@ -14,9 +14,10 @@ namespace Ebergstedt.Overwatch.Counters
     {
         public int GetHeroIdByMugshot(
                                       [NotNull] Bitmap targetHeroBitmap,
-                                      IEnumerable<Tuple<int, Bitmap>> templateHeroIdBitmaps)
+                                      [NotNull] IEnumerable<Tuple<int, Bitmap>> templateHeroIdBitmaps)
         {
             if (targetHeroBitmap == null) throw new ArgumentNullException(nameof(targetHeroBitmap));
+            if (templateHeroIdBitmaps == null) throw new ArgumentNullException(nameof(templateHeroIdBitmaps));
 
             List<Tuple<float, int>> results = new List<Tuple<float, int>>();
 

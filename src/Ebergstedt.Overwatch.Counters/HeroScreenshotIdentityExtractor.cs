@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.Overwatch.Counters.Enums;
+using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters
 {
@@ -24,14 +25,15 @@ namespace Ebergstedt.Overwatch.Counters
 
         public HeroScreenshotIdentityExtractor()
         {
-            _heroList = JsonConfigLoader.LoadHeroConfig();
-            _mugshotLocations = JsonConfigLoader.LoadMugshotLocations();
-            _heroIdMugshotBitmaps = JsonConfigLoader.LoadHeroIdMugshotBitmaps();
+            _heroList = JsonConfigLoader.GetHeroConfig();
+            _mugshotLocations = JsonConfigLoader.GetMugshotLocations();
+            _heroIdMugshotBitmaps = JsonConfigLoader.GetHeroIdMugshotBitmaps();
         }
         
-        public IEnumerable<int> FindEnemyHeroesByScreenshot(
-                                                            Bitmap screenShot)
-        {     
+        public IEnumerable<int> FindEnemyHeroesByScreenshot([NotNull] Bitmap screenShot)
+        {
+            if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
+
             var heroesByScreenshot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                screenShot,
                                                                                                _mugshotLocations.EnemyLocationPoints,
@@ -52,9 +54,10 @@ namespace Ebergstedt.Overwatch.Counters
                    .Select(h => h.Id);            
         }
 
-        public IEnumerable<int> FindAlliedHeroesByScreenshot(
-                                                             Bitmap screenShot)
+        public IEnumerable<int> FindAlliedHeroesByScreenshot([NotNull] Bitmap screenShot)
         {
+            if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
+
             var heroesByScreenshot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                screenShot,
                                                                                                _mugshotLocations.AlliedLocationPoints,

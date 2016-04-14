@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ebergstedt.Overwatch.Counters.Containers;
+using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters
 {
@@ -17,10 +18,11 @@ namespace Ebergstedt.Overwatch.Counters
     {
         readonly OverwatchWinrateApi _overwatchWinrateApi = new OverwatchWinrateApi();    
         
-        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
-                                                                               IEnumerable<int> enemyHeroIds,
-                                                                               int mapId)
+        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition([NotNull] IEnumerable<int> enemyHeroIds,
+                                                                               [NotNull] int mapId)
         {
+            if (enemyHeroIds == null) throw new ArgumentNullException(nameof(enemyHeroIds));
+
             List<HeroWinrateCalculationResult> heroWinrateCalculationResults = new List<HeroWinrateCalculationResult>();
 
             foreach (var enemyHeroId in enemyHeroIds.Distinct())
@@ -68,11 +70,13 @@ namespace Ebergstedt.Overwatch.Counters
                                                 .Select(h => h.HeroId);
         }
 
-        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
-                                                                             IEnumerable<int> enemyHeroIds,
-                                                                             IEnumerable<int> alliedHeroIds,
-                                                                             int mapId)
+        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition([NotNull] IEnumerable<int> enemyHeroIds,
+            [NotNull] IEnumerable<int> alliedHeroIds,
+                                                                               [NotNull] int mapId)
         {
+            if (enemyHeroIds == null) throw new ArgumentNullException(nameof(enemyHeroIds));
+            if (alliedHeroIds == null) throw new ArgumentNullException(nameof(alliedHeroIds));
+
             //todo alliedHeroIds
             return GetBestOrderedHeroIdCountersForTeamComposition(
                                                           enemyHeroIds,

@@ -9,6 +9,18 @@ namespace Ebergstedt.Overwatch.Counters.Containers
 {
     public class JsonContainers
     {
+        public class Map
+        {
+            public int Id { get; set; }
+
+            public string Name { get; set; }
+        }
+
+        public class MapConfig
+        {
+            public List<Map> Maps { get; set; }
+        }
+
         public class MugshotLocations
         {
             public List<List<int>> EnemyLocationPoints { get; set; }

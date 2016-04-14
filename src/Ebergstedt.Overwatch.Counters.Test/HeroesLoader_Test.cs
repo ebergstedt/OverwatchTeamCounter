@@ -15,7 +15,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         [Test]
         public void LoadMugshotsConfig()
         {
-            var mugshotLocations = JsonConfigLoader.LoadMugshotLocations();
+            var mugshotLocations = JsonConfigLoader.GetMugshotLocations();
 
             Assert.True(mugshotLocations.EnemyLocationPoints.Any());
         }
@@ -24,7 +24,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         public void HeroesConfig()
         {            
 
-            var heroes = JsonConfigLoader.LoadHeroConfig();
+            var heroes = JsonConfigLoader.GetHeroConfig();
 
             Assert.True(heroes.Any());
         }

@@ -20,7 +20,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
         {
             HeroMugshotIdentifier heroMugshotIdentifier = new HeroMugshotIdentifier();
 
-            var loadMugshotLocations = JsonConfigLoader.LoadMugshotLocations();
+            var loadMugshotLocations = JsonConfigLoader.GetMugshotLocations();
 
             var extractHeroMugshotsByScreenShot = HeroMugshotBitmapExtractor.ExtractHeroMugshotsByScreenShot(
                                                                                                 (Bitmap)Bitmap.FromFile(
@@ -45,7 +45,7 @@ namespace Ebergstedt.Overwatch.Counters.Test
             {
                 var heroIdByMugshot = heroMugshotIdentifier.GetHeroIdByMugshot(
                                                                         mugshot,
-                                                                        JsonConfigLoader.LoadHeroIdMugshotBitmaps());
+                                                                        JsonConfigLoader.GetHeroIdMugshotBitmaps());
 
                 Assert.True(correctMugshotsHeroIdsOnFakeScreenshot[index] == heroIdByMugshot);
 
