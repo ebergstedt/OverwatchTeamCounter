@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,14 +18,14 @@ namespace Ebergstedt.Overwatch.ConsoleApp
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
             bool debugMode = args.Contains("-debug");             
 
             Cleanup();
 
             ScreenCapturer screenCapturer = new ScreenCapturer();
             HeroScreenshotIdentityExtractor heroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
-            HeroStatisticsCalculator heroStatisticsCalculator = new HeroStatisticsCalculator();
+            StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
             MetaDataHelper metaDataHelper = new MetaDataHelper();
 
             while (true)
@@ -49,9 +50,9 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 
                 Console.WriteLine("Calculating winrates.");
 
-                IEnumerable<int> bestHeroIds = heroStatisticsCalculator.GetBestOrderedHeroIdCountersForTeamComposition(
-                                                                                                                       enemyHeroIds,
-                                                                                                                       mapId);
+                IEnumerable<int> bestHeroIds = statisticsCalculator.GetBestOrderedHeroIdCountersForTeamComposition(
+                                                                                                                   enemyHeroIds,
+                                                                                                                   mapId);
 
                 Console.WriteLine($"\nBest hero to chose (in order): ");
                 int i = 1;

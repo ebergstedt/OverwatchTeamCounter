@@ -30,9 +30,9 @@ namespace Ebergstedt.Overwatch.Counters
 
             _rootPath = rootPath;
 
-            _heroesConfigPath = Path.Combine(rootPath, "Heroes.json");
-            _mugshotLocationConfigPath = Path.Combine(rootPath, "MugshotLocations.json");
-            _mapsConfigPath = Path.Combine(rootPath, "Maps.json");
+            _heroesConfigPath = Path.Combine(rootPath, @"Configuration\Heroes.json");
+            _mugshotLocationConfigPath = Path.Combine(rootPath, @"Configuration\MugshotLocations.json");
+            _mapsConfigPath = Path.Combine(rootPath, @"Configuration\Maps.json");
         }
 
         public JsonContainers.MugshotLocations GetMugshotLocations(

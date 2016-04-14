@@ -11,16 +11,20 @@ namespace Ebergstedt.Overwatch.Counters
     class HeroWinrateCalculationResult
     {
         public int HeroId { get; set; }
-        public float WinResultant { get; set; }
+        public float WinResult { get; set; }
     }
 
-    public class HeroStatisticsCalculator
+    public class StatisticsCalculator
     {
+        const int MAP_WINRATE_MULTIPLIER = 2;
+        const int KILLSTREAK_ADDITION = 5;
+
         readonly OverwatchWinrateApi _overwatchWinrateApi = new OverwatchWinrateApi();    
         
         public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
                                                                                [NotNull] IEnumerable<int> enemyHeroIds,
-                                                                               [NotNull] int mapId)
+                                                                               [NotNull] int mapId,
+                                                                               IEnumerable<int> killStreakingEnemyHeroIds = null)
         {
             if (enemyHeroIds == null) throw new ArgumentNullException(nameof(enemyHeroIds));
 
@@ -35,9 +39,15 @@ namespace Ebergstedt.Overwatch.Counters
                 {
                     var singleOrDefault = heroWinrateCalculationResults.SingleOrDefault(h => h.HeroId == heroWinRate.HeroId);
 
+                    var percentage = heroWinRate.Percentage;
+
+                    //alter for kill streaking heroes as they are more dangerous
+                    if (killStreakingEnemyHeroIds != null && killStreakingEnemyHeroIds.Contains(heroWinRate.HeroId))
+                        percentage += KILLSTREAK_ADDITION;
+
                     if (singleOrDefault != null)
                     {
-                        singleOrDefault.WinResultant += heroWinRate.Percentage;
+                        singleOrDefault.WinResult += percentage;
                     }
                     else
                     {
@@ -45,7 +55,7 @@ namespace Ebergstedt.Overwatch.Counters
                                                           new HeroWinrateCalculationResult()
                                                           {
                                                               HeroId = heroWinRate.HeroId,
-                                                              WinResultant = heroWinRate.Percentage
+                                                              WinResult = percentage
                                                           });
                     }
                 }
@@ -63,15 +73,16 @@ namespace Ebergstedt.Overwatch.Counters
                 var winrateCalculationResult = heroWinrateCalculationResults.Single(h => h.HeroId == heroWinrateCalculationResult.HeroId);
 
                 //add a single resultant to the total winrate
-                winrateCalculationResult.WinResultant += mapWinrateForHero.Percentage;
+                winrateCalculationResult.WinResult += mapWinrateForHero.Percentage * MAP_WINRATE_MULTIPLIER;
             }
 
             //sort by hero having the most total winrate against the enemy team
-            return heroWinrateCalculationResults.OrderByDescending(w => w.WinResultant)
+            return heroWinrateCalculationResults.OrderByDescending(w => w.WinResult)
                                                 .Select(h => h.HeroId);
         }
 
-        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition([NotNull] IEnumerable<int> enemyHeroIds,
+        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
+                                                                               [NotNull] IEnumerable<int> enemyHeroIds,
                                                                                [NotNull] IEnumerable<int> alliedHeroIds,
                                                                                [NotNull] int mapId)
         {

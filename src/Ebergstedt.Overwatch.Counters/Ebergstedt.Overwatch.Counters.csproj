@@ -69,6 +69,7 @@
     <Compile Include="BitmapTransformer.cs" />
     <Compile Include="Containers\Containers.cs" />
     <Compile Include="Containers\JsonContainers.cs" />
+    <Compile Include="Enums\Role.cs" />
     <Compile Include="MetaDataHelper.cs" />
     <Compile Include="HeroScreenshotIdentityExtractor.cs" />
     <Compile Include="JsonConfigLoader.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="ScreenCapturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\ScreenResolution.cs" />
-    <Compile Include="HeroStatisticsCalculator.cs" />
+    <Compile Include="StatisticsCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

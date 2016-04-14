@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using Ebergstedt.Overwatch.Counters.Enums;
 
 namespace Ebergstedt.Overwatch.Counters.Containers
 {
@@ -49,6 +51,8 @@ namespace Ebergstedt.Overwatch.Counters.Containers
             public string Name { get; set; }
 
             public string MugshotFilePath { get; set; }
+
+            public Role Role { get; set; }
         }
     }
 }

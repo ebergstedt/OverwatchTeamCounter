@@ -1,0 +1,130 @@
+﻿{
+  "Heroes": [
+    {
+      "Id": 1,
+      "Name": "Genji",
+      "MugshotFilePath": "Mugshots\\Genji.jpg",
+      "Role": "Offense"
+    },
+    {
+      "Id": 2,
+      "Name": "McCree",
+      "MugshotFilePath": "Mugshots\\McCree.jpg",
+      "Role": "Offense"
+    },
+    {
+      "Id": 3,
+      "Name": "Pharah",
+      "MugshotFilePath": "Mugshots\\Pharah.jpg",
+      "Role": "Offense"
+    },
+    {
+      "Id": 4,
+      "Name": "Reaper",
+      "MugshotFilePath": "Mugshots\\Reaper.jpg",
+      "Role": "Offense"
+    },
+    {
+      "Id": 5,
+      "Name": "Soldier 76",
+      "MugshotFilePath": "Mugshots\\Soldier 76.jpg",
+      "Role": "Offense"
+    },
+    {
+      "Id": 6,
+      "Name": "Tracer",
+      "MugshotFilePath": "Mugshots\\Tracer.jpg",
+      "Role": "Offense"
+    },
+    {
+      "Id": 7,
+      "Name": "Bastion",
+      "MugshotFilePath": "Mugshots\\Bastion.jpg",
+      "Role": "Defense"
+    },
+    {
+      "Id": 8,
+      "Name": "Hanzo",
+      "MugshotFilePath": "Mugshots\\Hanzo.jpg",
+      "Role": "Defense"
+    },
+    {
+      "Id": 9,
+      "Name": "Junkrat",
+      "MugshotFilePath": "Mugshots\\Junkrat.jpg",
+      "Role": "Defense"
+    },
+    {
+      "Id": 10,
+      "Name": "Mei",
+      "MugshotFilePath": "Mugshots\\Mei.jpg",
+      "Role": "Defense"
+    },
+    {
+      "Id": 11,
+      "Name": "Torbjorn",
+      "MugshotFilePath": "Mugshots\\Torbjorn.jpg",
+      "Role": "Defense"
+    },
+    {
+      "Id": 12,
+      "Name": "Widowmaker",
+      "MugshotFilePath": "Mugshots\\Widowmaker.jpg",
+      "Role": "Defense"
+    },
+    {
+      "Id": 13,
+      "Name": "DVa",
+      "MugshotFilePath": "Mugshots\\DVa.jpg",
+      "Role": "Tank"
+    },
+    {
+      "Id": 14,
+      "Name": "Reinhardt",
+      "MugshotFilePath": "Mugshots\\Reinhardt.jpg",
+      "Role": "Tank"
+    },
+    {
+      "Id": 15,
+      "Name": "Roadhog",
+      "MugshotFilePath": "Mugshots\\Roadhog.jpg",
+      "Role": "Tank"
+    },
+    {
+      "Id": 16,
+      "Name": "Winston",
+      "MugshotFilePath": "Mugshots\\Winston.jpg",
+      "Role": "Tank"
+    },    
+    {
+      "Id": 17,
+      "Name": "Zarya",
+      "MugshotFilePath": "Mugshots\\Zarya.jpg",
+      "Role": "Tank"
+    },
+    {
+      "Id": 18,
+      "Name": "Lucio",
+      "MugshotFilePath": "Mugshots\\Lucio.jpg",
+      "Role": "Support"
+    },
+    {
+      "Id": 19,
+      "Name": "Mercy",
+      "MugshotFilePath": "Mugshots\\Mercy.jpg",
+      "Role": "Support"
+    },
+    {
+      "Id": 20,
+      "Name": "Symmetra",
+      "MugshotFilePath": "Mugshots\\Symmetra.jpg",
+      "Role": "Support"
+    },
+    {
+      "Id": 21,
+      "Name": "Zenyatta",
+      "MugshotFilePath": "Mugshots\\Zenyatta.jpg",
+      "Role": "Support"
+    }
+  ]
+}
