@@ -12,7 +12,8 @@ namespace Ebergstedt.Overwatch.Counters
 {
     public class BitmapTransformer
     {
-        public static Bitmap TransformBitmapToJpg([NotNull] Bitmap bitmap)
+        public static Bitmap TransformBitmapToJpg(
+                                                  [NotNull] Bitmap bitmap)
         {
             if (bitmap == null) throw new ArgumentNullException(nameof(bitmap));
 

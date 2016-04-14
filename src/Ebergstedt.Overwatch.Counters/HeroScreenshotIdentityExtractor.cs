@@ -30,7 +30,8 @@ namespace Ebergstedt.Overwatch.Counters
             _heroIdMugshotBitmaps = JsonConfigLoader.GetHeroIdMugshotBitmaps();
         }
         
-        public IEnumerable<int> FindEnemyHeroesByScreenshot([NotNull] Bitmap screenShot)
+        public IEnumerable<int> FindEnemyHeroesByScreenshot(
+                                                            [NotNull] Bitmap screenShot)
         {
             if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
 
@@ -54,7 +55,8 @@ namespace Ebergstedt.Overwatch.Counters
                    .Select(h => h.Id);            
         }
 
-        public IEnumerable<int> FindAlliedHeroesByScreenshot([NotNull] Bitmap screenShot)
+        public IEnumerable<int> FindAlliedHeroesByScreenshot(
+                                                             [NotNull] Bitmap screenShot)
         {
             if (screenShot == null) throw new ArgumentNullException(nameof(screenShot));
 

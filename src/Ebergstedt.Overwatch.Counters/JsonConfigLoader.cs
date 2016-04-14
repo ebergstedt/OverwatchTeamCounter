@@ -23,7 +23,8 @@ namespace Ebergstedt.Overwatch.Counters
 
         readonly ISimpleMemoryCache _cache = new SimpleMemoryCache.SimpleMemoryCache();
 
-        public JsonConfigLoader([NotNull] string rootPath)
+        public JsonConfigLoader(
+                                [NotNull] string rootPath)
         {
             if (rootPath == null) throw new ArgumentNullException(nameof(rootPath));
 

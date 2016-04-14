@@ -18,7 +18,8 @@ namespace Ebergstedt.Overwatch.Counters
     {
         readonly OverwatchWinrateApi _overwatchWinrateApi = new OverwatchWinrateApi();    
         
-        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition([NotNull] IEnumerable<int> enemyHeroIds,
+        public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition(
+                                                                               [NotNull] IEnumerable<int> enemyHeroIds,
                                                                                [NotNull] int mapId)
         {
             if (enemyHeroIds == null) throw new ArgumentNullException(nameof(enemyHeroIds));
@@ -71,7 +72,7 @@ namespace Ebergstedt.Overwatch.Counters
         }
 
         public IEnumerable<int> GetBestOrderedHeroIdCountersForTeamComposition([NotNull] IEnumerable<int> enemyHeroIds,
-            [NotNull] IEnumerable<int> alliedHeroIds,
+                                                                               [NotNull] IEnumerable<int> alliedHeroIds,
                                                                                [NotNull] int mapId)
         {
             if (enemyHeroIds == null) throw new ArgumentNullException(nameof(enemyHeroIds));
