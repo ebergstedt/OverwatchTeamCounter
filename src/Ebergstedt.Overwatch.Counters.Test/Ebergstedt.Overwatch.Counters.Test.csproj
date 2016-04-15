@@ -126,6 +126,9 @@
     <Content Include="Mugshots\Soldier 76.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Mugshots\Soldier.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Mugshots\Symmetra.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

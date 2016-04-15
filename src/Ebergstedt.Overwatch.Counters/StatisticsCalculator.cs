@@ -17,7 +17,7 @@ namespace Ebergstedt.Overwatch.Counters
     public class StatisticsCalculator
     {
         const int MAP_WINRATE_MULTIPLIER = 2;
-        const int KILLSTREAK_ADDITION = 5;
+        const int KILLSTREAK_ADDITION = 15;
 
         readonly OverwatchWinrateApi _overwatchWinrateApi = new OverwatchWinrateApi();    
         
