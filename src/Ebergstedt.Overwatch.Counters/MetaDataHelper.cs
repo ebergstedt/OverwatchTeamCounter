@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ebergstedt.Overwatch.Counters.Containers;
 using JetBrains.Annotations;
 
 namespace Ebergstedt.Overwatch.Counters
@@ -25,6 +26,11 @@ namespace Ebergstedt.Overwatch.Counters
             return _jsonConfigLoader.GetMapConfig()
                                    .SingleOrDefault(m => m.Id == id)
                                    ?.Name;
+        }
+
+        public IEnumerable<JsonContainers.Map> GetMaps()
+        {
+            return _jsonConfigLoader.GetMapConfig();
         }
     }
 }

@@ -10,6 +10,8 @@ Takes a screenshot of your active game window and displays the best hero to coun
 
 * Only 1080p monitors are supported at this time.
 
+* Heroes must be alive (Not have a red cross) on their faces for the program to identify correctly.
+
 # TODO:
 
 * Get accurate winrates somewhere

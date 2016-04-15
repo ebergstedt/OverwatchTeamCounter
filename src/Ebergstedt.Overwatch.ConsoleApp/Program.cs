@@ -17,55 +17,69 @@ namespace Ebergstedt.Overwatch.ConsoleApp
 {
     class Program
     {
+        
+        static readonly ScreenCapturer ScreenCapturer = new ScreenCapturer();
+        static readonly HeroScreenshotIdentityExtractor HeroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
+        static readonly StatisticsCalculator StatisticsCalculator = new StatisticsCalculator();
+        static readonly MetaDataHelper MetaDataHelper = new MetaDataHelper();
+
+        static int CurrentMapId { get; set; }
+
         static void Main(string[] args)
         {            
             bool debugMode = args.Contains("-debug");             
 
             Cleanup();
 
-            ScreenCapturer screenCapturer = new ScreenCapturer();
-            HeroScreenshotIdentityExtractor heroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
-            StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
-            MetaDataHelper metaDataHelper = new MetaDataHelper();
+            CurrentMapId = GetMapId();
 
             while (true)
             {
-                int mapId = 1;
+                Console.WriteLine("\n\n--------------------------\nPress ENTER to take a screenshot and start the calculation.");
+                Console.WriteLine("Write 'map' to choose map.");
 
-                Console.WriteLine($"Chosen map: {metaDataHelper.GetMapNameById(mapId)}");
+                var readLine = Console.ReadLine();
+
+                if (readLine == "map")
+                {
+                    CurrentMapId = GetMapId();
+                    continue;
+                }
+
+                Console.WriteLine("Taking screenshot in 3 seconds...");
+
+                Thread.Sleep(3000);
 
                 Console.WriteLine("Taking sceenshot.");
 
-                var activeScreenCapture = screenCapturer.GetActiveScreenCapture(
+                var activeScreenCapture = ScreenCapturer.GetActiveScreenCapture(
                                                                                  ScreenBoundsCalculator.GetRectangleByScreenResolution(
                                                                                                                                        ScreenResolution.FullHD));
 
-                IEnumerable<int> enemyHeroIds = heroScreenshotIdentityExtractor.FindEnemyHeroesByScreenshot(activeScreenCapture);
-                
-                Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(heroId => new { Hero = metaDataHelper.GetHeroNameById(heroId) }))}");
+                Console.WriteLine("Screenshot saved. Extracting hero data from screenshot.");
 
-                IEnumerable<int> friendlyHeroIds = heroScreenshotIdentityExtractor.FindAlliedHeroesByScreenshot(activeScreenCapture);
+                IEnumerable<int> enemyHeroIds = HeroScreenshotIdentityExtractor.FindEnemyHeroesByScreenshot(activeScreenCapture);
                 
-                Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(heroId => new { Hero = metaDataHelper.GetHeroNameById(heroId) }))}");
+                Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(heroId => new { Hero = MetaDataHelper.GetHeroNameById(heroId) }))}");
+
+                IEnumerable<int> friendlyHeroIds = HeroScreenshotIdentityExtractor.FindAlliedHeroesByScreenshot(activeScreenCapture);
+                
+                Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(heroId => new { Hero = MetaDataHelper.GetHeroNameById(heroId) }))}");
 
                 Console.WriteLine("Calculating winrates.");
 
-                IEnumerable<int> bestHeroIds = statisticsCalculator.GetBestOrderedHeroIdCountersForTeamComposition(
+                IEnumerable<int> bestHeroIds = StatisticsCalculator.GetBestOrderedHeroIdCountersForTeamComposition(
                                                                                                                    enemyHeroIds,
-                                                                                                                   mapId);
+                                                                                                                   CurrentMapId);
+                Console.WriteLine("Calculation finished.");
 
                 Console.WriteLine($"\nBest hero to chose (in order): ");
                 int i = 1;
                 foreach (var heroId in bestHeroIds.Take(10))
                 {                    
-                    Console.WriteLine($"{i}. { metaDataHelper.GetHeroNameById(heroId)} ");
+                    Console.WriteLine($"{i}. { MetaDataHelper.GetHeroNameById(heroId)} ");
                     i++;
                 }
-
-                Console.WriteLine("\nSleeping 5000ms.");
-                Thread.Sleep(5000);
-
-                Console.Clear();
             }
         }
 
@@ -80,6 +94,34 @@ namespace Ebergstedt.Overwatch.ConsoleApp
             {
                 File.Delete(filePath);
             }
+        }
+
+        private static int GetMapId()
+        {
+            DisplayChooseMap();
+            var readLine = Console.ReadLine();
+
+            int mapId;
+            while (!int.TryParse(readLine, out mapId))
+            {
+                DisplayChooseMap();
+                readLine = Console.ReadLine();
+            }
+
+            Console.WriteLine($"Chosen map: {MetaDataHelper.GetMapNameById(CurrentMapId)}");
+
+            return mapId;
+        }
+
+        private static void DisplayChooseMap()
+        {
+            Console.WriteLine("-- Choose a map --");
+            foreach (var map in MetaDataHelper.GetMaps())
+            {
+                Console.WriteLine($"Id: {map.Id} Name: {map.Name}");
+            }
+
+            Console.WriteLine("Write the Id number and press ENTER: ");
         }
     }
 }
