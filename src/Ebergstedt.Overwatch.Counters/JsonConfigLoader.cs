@@ -20,6 +20,7 @@ namespace Ebergstedt.Overwatch.Counters
         readonly string _heroesConfigPath;
         readonly string _mugshotLocationConfigPath;
         readonly string _mapsConfigPath;
+        readonly string _countersConfigPath;
 
         readonly ISimpleMemoryCache _cache = new SimpleMemoryCache.SimpleMemoryCache();
 
@@ -33,6 +34,24 @@ namespace Ebergstedt.Overwatch.Counters
             _heroesConfigPath = Path.Combine(rootPath, @"Configuration\Heroes.json");
             _mugshotLocationConfigPath = Path.Combine(rootPath, @"Configuration\MugshotLocations.json");
             _mapsConfigPath = Path.Combine(rootPath, @"Configuration\Maps.json");
+            _countersConfigPath = Path.Combine(rootPath, @"Configuration\Counters.json");
+        }
+
+        public JsonContainers.CountersConfig GetCounters()
+        {
+            return _cache.Get(
+                              $"GetCounters()",
+                              _GetCounters());
+        }
+
+        private JsonContainers.CountersConfig _GetCounters()
+        {
+            if (!File.Exists(_countersConfigPath))
+                throw new FileNotFoundException(_countersConfigPath);
+
+            var readAllText = File.ReadAllText(_countersConfigPath);
+
+            return JsonConvert.DeserializeObject<JsonContainers.CountersConfig>(readAllText);
         }
 
         public JsonContainers.MugshotLocations GetMugshotLocations(

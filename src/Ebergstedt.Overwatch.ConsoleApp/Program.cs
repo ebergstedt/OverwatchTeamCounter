@@ -12,12 +12,14 @@ using Ebergstedt.Overwatch.Counters;
 using Ebergstedt.Overwatch.Counters.Containers;
 using Ebergstedt.Overwatch.Counters.Enums;
 using Newtonsoft.Json;
+using NLog;
 
 namespace Ebergstedt.Overwatch.ConsoleApp
 {
     class Program
     {
-        
+        static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         static readonly ScreenCapturer ScreenCapturer = new ScreenCapturer();
         static readonly HeroScreenshotIdentityExtractor HeroScreenshotIdentityExtractor = new HeroScreenshotIdentityExtractor();
         static readonly StatisticsCalculator StatisticsCalculator = new StatisticsCalculator();
@@ -61,10 +63,12 @@ namespace Ebergstedt.Overwatch.ConsoleApp
                 IEnumerable<int> enemyHeroIds = HeroScreenshotIdentityExtractor.FindEnemyHeroesByScreenshot(activeScreenCapture);
                 
                 Console.WriteLine($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(heroId => new { Hero = MetaDataHelper.GetHeroNameById(heroId) }))}");
+                Logger.Info($"Enemy heroes found: { JsonConvert.SerializeObject(enemyHeroIds?.Select(heroId => new { Hero = MetaDataHelper.GetHeroNameById(heroId) })) }");
 
                 IEnumerable<int> friendlyHeroIds = HeroScreenshotIdentityExtractor.FindAlliedHeroesByScreenshot(activeScreenCapture);
-                
+
                 Console.WriteLine($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(heroId => new { Hero = MetaDataHelper.GetHeroNameById(heroId) }))}");
+                Logger.Info($"Friendly heroes found: { JsonConvert.SerializeObject(friendlyHeroIds?.Select(heroId => new { Hero = MetaDataHelper.GetHeroNameById(heroId) }))}");
 
                 Console.WriteLine("Calculating winrates.");
 

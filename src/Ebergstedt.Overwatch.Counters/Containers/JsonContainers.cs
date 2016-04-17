@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using Ebergstedt.Overwatch.Counters.Enums;
@@ -11,6 +13,25 @@ namespace Ebergstedt.Overwatch.Counters.Containers
 {
     public class JsonContainers
     {
+        public class VersusHeroCounterValue
+        {
+            public int HeroId { get; set; }
+
+            public int CounterValue { get; set; }
+        }
+
+        public class HeroCounter
+        {
+            public int HeroId { get; set; }
+
+            public List<VersusHeroCounterValue> VersusHeroWinrates { get; set; } 
+        }
+
+        public class CountersConfig
+        {
+            public List<HeroCounter> Counters { get; set; }
+        }
+
         public class Map
         {
             public int Id { get; set; }

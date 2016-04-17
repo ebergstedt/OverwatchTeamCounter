@@ -63,6 +63,9 @@
     <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\Counters.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Configuration\Heroes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

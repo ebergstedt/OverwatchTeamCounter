@@ -1,0 +1,1874 @@
+﻿{
+  "Counters": [
+    {
+      "HeroId": 1,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 75
+        }
+      ]
+
+    },
+    {
+      "HeroId": 2,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 3,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 4,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 5,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 6,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 75
+        }
+      ]
+    },
+    {
+      "HeroId": 7,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 8,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 75
+        }
+      ]
+    },
+    {
+      "HeroId": 9,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 10,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 11,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 75
+        }
+      ]
+    },
+    {
+      "HeroId": 12,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 75
+        }
+      ]
+    },
+    {
+      "HeroId": 13,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 25
+        }
+      ]
+    },
+    {
+      "HeroId": 14,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 25
+        }
+      ]
+    },
+    {
+      "HeroId": 15,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 16,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 25
+        }
+      ]
+    },
+    {
+      "HeroId": 17,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 25
+        }
+      ]
+    },
+    {
+      "HeroId": 18,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 19,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 20,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    },
+    {
+      "HeroId": 21,
+      "VersusHeroWinrates": [
+        {
+          "HeroId": 1,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 2,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 3,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 4,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 5,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 6,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 7,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 8,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 9,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 10,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 11,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 12,
+          "CounterValue": 25
+        },
+        {
+          "HeroId": 13,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 14,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 15,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 16,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 17,
+          "CounterValue": 75
+        },
+        {
+          "HeroId": 18,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 19,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 20,
+          "CounterValue": 50
+        },
+        {
+          "HeroId": 21,
+          "CounterValue": 50
+        }
+      ]
+    }
+  ]
+}

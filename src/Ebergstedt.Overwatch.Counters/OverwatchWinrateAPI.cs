@@ -12,7 +12,8 @@ namespace Ebergstedt.Overwatch.Counters
 {
     public class OverwatchWinrateApi
     {
-        private ISimpleMemoryCache _cache = new SimpleMemoryCache.SimpleMemoryCache();
+        readonly ISimpleMemoryCache _cache = new SimpleMemoryCache.SimpleMemoryCache();
+        readonly JsonConfigLoader _jsonConfigLoader = new JsonConfigLoader(Environment.CurrentDirectory); //todo
 
         public IEnumerable<HeroWinRate> GetHeroWinratesAgainstHero(
                                                                    [NotNull] int heroId)
@@ -30,21 +31,18 @@ namespace Ebergstedt.Overwatch.Counters
                               GetMapWinrate(heroId));
         }
 
-        private List<HeroWinRate> GetHeroWinRate(
+        //http://i.imgur.com/OUVOUfP.jpg
+        private IEnumerable<HeroWinRate> GetHeroWinRate(
                                                  [NotNull] int heroId)
         {
-            //todo placeholder
-
-            Random rand = new Random();
-            
-            return Enumerable.Range(1, 21)
-                             .Select(x => new HeroWinRate(
-                                                          (float) rand.Next(45, 55),
-                                                          x))
-                             .ToList();
+            return _jsonConfigLoader.GetCounters()
+                                    .Counters
+                                    .SingleOrDefault(c => c.HeroId == heroId)
+                                    ?.VersusHeroWinrates
+                                    .Select(v => new HeroWinRate(v.CounterValue, v.HeroId));
         }
 
-        private List<MapWinRate> GetMapWinrate(
+        private IEnumerable<MapWinRate> GetMapWinrate(
                                                [NotNull] int heroId)
         {
             //todo placeholder
@@ -53,9 +51,8 @@ namespace Ebergstedt.Overwatch.Counters
 
             return Enumerable.Range(1, 12)
                              .Select(x => new MapWinRate(
-                                                          (float)rand.Next(45, 55),
-                                                          x))
-                             .ToList();
+                                                         50,
+                                                         x));
         }
     }
 }
